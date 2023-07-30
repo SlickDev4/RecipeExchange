@@ -1,0 +1,142 @@
+h1 {
+    color: whitesmoke;
+}
+
+.recipes-container .main-title {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    color: rgb(1, 183, 255);
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.recipes-container {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipes-container .recipes-box {
+    overflow: auto;
+    max-height: 70vh;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    border: 2px solid whitesmoke;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.recipes-container .recipes-box::-webkit-scrollbar {
+    display: none;
+}
+
+.recipes-container .recipes-box .recipe {
+    margin: 5% 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipes-container .recipes-box .recipe .title-img {
+    width: 40%;
+}
+
+.recipes-container .recipes-box .recipe .description h2 {
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+
+.recipes-container .recipes-box .recipe img {
+    width: 100%;
+    height: 100%;
+}
+
+.recipes-container .recipes-box .recipe .description {
+    width: 60%;
+    margin-bottom: 3%;
+}
+
+.recipes-container .recipes-box .recipe .description p {
+    margin-bottom: 2%;
+    margin-left: 5%;
+    overflow-wrap: break-word;
+    font-weight: 500;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons {
+    padding-top: 5%;
+    display: flex;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons .icon-a {
+    text-decoration: none;
+    color: whitesmoke;
+    transition: 0.5s ease;
+    margin-bottom: 2%;
+    margin-left: 5%;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons .form {
+    display: flex;
+    margin-left: 5%;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons .other-buttons {
+    width: 70%;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons .form button {
+    display: inline;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons span {
+    margin-left: 5%;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons button:hover {
+    color: rgb(1, 183, 255);
+    cursor: pointer;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons .not-icon-a {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    padding: 1% 2%;
+    border-radius: 6px;
+    background-color: bisque;
+    color: black;
+    transition: 0.5s ease;
+}
+
+.recipes-container .recipes-box .recipe .description .buttons .not-icon-a:hover {
+    background-color: rgb(1, 183, 255);
+}
+
+.recipes-container .recipes-box .recipe .description p span {
+    color: rgb(1, 183, 255);
+}
+
+.recipes-box {
+    background-color: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(8px);
+    color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+    0 0 40px rgba(255, 255, 255, 0.5), 
+    0 0 80px rgba(255, 255, 255, 0.5), 
+    0 0 120px rgba(255, 255, 255, 0.5);
+}
+
+.no-recipes {
+    text-align: center;
+    padding: 5%;
+}

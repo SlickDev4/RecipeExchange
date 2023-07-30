@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %} {% block content %}
+<h1>Hello, {{ request.user }}</h1>
+<h1>Full name: {{ profile.full_name }}</h1>
+<div class="recipes-container">
+  <div class="recipes-box">
+    <h2 class="main-title">All Recipes</h2>
+    {% if recipes %}
+    <ul>
+      {% for recipe in recipes %}
+      <div class="recipe">
+        <div class="title-img">
+          <img src="{{ recipe.photo.url }}" alt="img-{{ forloop.counter }}" />
+        </div>
+        <div class="description">
+          <h2>{{ recipe.title }}</h2>
+          <p><span>Category:</span> {{ recipe.category.name}}</p>
+          <p><span>Ingredients:</span> {{ recipe.ingredients }}</p>
+          <p><span>Uploaded by:</span> {{ recipe.author.email }}</p>
+          <p><span>Uploaded on:</span> {{ recipe.created_at }}</p>
+          <div class="buttons">
+            <div class="form">
+              <form action="{% url 'recipe-like' recipe.pk %}" method="post">
+                {% csrf_token %}
+                <button type="submit">
+                  <ion-icon name="thumbs-up"></ion-icon>
+                </button>
+              </form>
+            </div>
+            <div class="other-buttons">
+              <span>{{ recipe.likes_count }}</span>
+              <a class="not-icon-a" href="#">Details</a>
+              {% if request.user == recipe.author %}
+              <a class="not-icon-a" href="{% url 'recipe-edit' recipe.pk %}"
+                >Edit</a
+              >
+              <a class="not-icon-a" href="{% url 'recipe-delete' recipe.pk %}"
+                >Delete</a
+              >
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="no-recipes">No recipes available.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

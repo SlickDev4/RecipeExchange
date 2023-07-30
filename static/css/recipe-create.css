@@ -1,0 +1,71 @@
+.recipe-create-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    margin: 5% 10%;
+    background-color: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+    0 0 40px rgba(255, 255, 255, 0.5), 
+    0 0 80px rgba(255, 255, 255, 0.5), 
+    0 0 120px rgba(255, 255, 255, 0.5);
+}
+
+.recipe-create-box div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6%;
+    align-items: center;
+    width: 100%;
+    gap: 3%;
+}
+
+.recipe-create-box div textarea {
+    height: 4em;
+    width: 100%;
+    resize: vertical;
+    max-height: 6em;
+}
+
+.recipe-create-box div select, .recipe-create-box div input {
+    width: 100%;
+}
+
+.recipe-create-box div span {
+    width: 40%;
+}
+
+.recipe-create-box .test a {
+    visibility: hidden;
+    color: white;
+}
+
+.recipe-create-box div input, .recipe-create-box div textarea, .recipe-create-box div select {
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.recipe-create-box div select option {
+    background-color: black;
+}
+
+.recipe-create-box button {
+    width: 50%;
+    margin-left: 30%;
+    margin-top: 5%;
+    min-height: 5vh;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: bisque;
+    transition: 0.5s ease;
+}
+
+.recipe-create-box button:hover {
+    background-color: rgb(1, 183, 255);
+}

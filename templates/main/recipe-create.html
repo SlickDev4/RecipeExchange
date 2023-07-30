@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %} {% block content %}
+
+<div class="recipe-create-box">
+  <h2>Add Recipe</h2>
+  <div></div>
+  <form
+    action="{% url 'recipe-create' %}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <div><span>{{ form.title.label }}</span> {{ form.title }}</div>
+    <div><span>{{ form.photo.label }}</span> {{ form.photo }}</div>
+    <div><span>{{ form.category.label }}</span> {{ form.category }}</div>
+    <div><span>{{ form.ingredients.label }}</span> {{ form.ingredients }}</div>
+    <div>
+      <span>{{ form.instructions.label }}</span> {{ form.instructions }}
+    </div>
+    {% csrf_token %}
+    <div><button type="submit">Add Recipe</button></div>
+  </form>
+</div>
+
+{% endblock %}

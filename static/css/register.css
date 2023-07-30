@@ -1,0 +1,67 @@
+.register-box {
+    align-items: center;
+    justify-content: center;
+}
+
+.register-box h1 {
+    margin-bottom: 8%;
+    font-size: 2em;
+    margin-top: 2%;
+}
+
+.register-box .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.register-box .form input {
+    min-height: 2vh;
+    font-size: 0.9em;
+}
+
+.register-box .form div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4%;
+    align-items: center;
+    width: 100%;
+    gap: 3%;
+}
+
+.register-box .form div input {
+    float: right;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.register-box .form div p {
+    font-size: 0.9em;
+}
+
+.hidden-errors {
+    color: red;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.register-button-div {
+    flex-direction: column;
+}
+
+.register-button-div button {
+    width: 70%;
+    margin-bottom: 8%;
+    margin-top: 5%;
+    border-radius: 6px;
+    height: 4vh;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: bisque;
+    transition: 0.5s ease;
+}

@@ -1,0 +1,93 @@
+.login-box, .register-box {
+    margin: 7% 33%;
+    background-color: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(8px);
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 10px;
+    min-height: 50vh;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+    0 0 40px rgba(255, 255, 255, 0.5), 
+    0 0 80px rgba(255, 255, 255, 0.5), 
+    0 0 120px rgba(255, 255, 255, 0.5);
+}
+
+.login-box h1, .login-btn-box {
+    text-align: center;
+}
+
+.login-box h1 {
+    font-size: 1.8em;
+    margin: 5% 5%;
+    margin-top: 0;
+}
+
+.login-box .input-1, .login-box .input-2 {
+    display: flex;
+    flex-direction: column;
+    min-height: 7vh;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 8%;
+}
+
+.login-box .input-1 label, .login-box .input-2 label {
+    color: whitesmoke;
+    font-size: 1.4em;
+    transition: 0.5s ease;
+    position: absolute;
+}
+
+.login-box .input-1 label {
+    top: 27%;
+}
+
+.login-box .input-2 label {
+    top: 52%;
+}
+
+.login-box .input-1 input, .login-box .input-2 input, .register-box .form input {
+    min-height: 4.5vh;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid whitesmoke;
+    font-size: 1.1em;
+}
+
+.login-box .input-1 input:focus, .login-box .input-2 input:focus {
+    border-bottom: 2px solid rgb(1, 183, 255);
+}
+
+.login-box .login-btn-box button {
+    width: 40%;
+    line-height: 200%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: bisque;
+    transition: 0.5s ease;
+}
+
+.login-box .login-btn-box button:hover, .register-button-div button:hover {
+    background-color: rgb(1, 183, 255);
+}
+
+.login-box .login-btn-box p {
+    margin-top: 3%;
+}
+
+.login-btn-box a, .register-button-div a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.login-btn-box a:hover, .register-button-div a:hover {
+    color: rgb(1, 183, 255);
+    text-decoration: underline;
+}

@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Food</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <section>
+      <div class="header-box">
+        <h1>Good<span>Food</span></h1>
+        <nav>
+          <ul>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'recipe-create' %}">Add Recipe</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{% url 'logout-user' %}">Logout</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      {% block content %} {% endblock %}
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

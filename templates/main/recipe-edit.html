@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+
+<div class="recipe-create-box">
+  <h2>Edit Recipe</h2>
+  <div></div>
+  <form
+    action="{% url 'recipe-edit' recipe.pk %}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <div><span>{{ form.title.label }}</span> {{ form.title }}</div>
+    <div class="test"><span>{{ form.photo.label }}</span> {{ form.photo }}</div>
+    <div><span>{{ form.category.label }}</span> {{ form.category }}</div>
+    <div><span>{{ form.ingredients.label }}</span> {{ form.ingredients }}</div>
+    <div>
+      <span>{{ form.instructions.label }}</span> {{ form.instructions }}
+    </div>
+    {% csrf_token %}
+    <div><button type="submit">Edit Recipe</button></div>
+  </form>
+  <script src="{% static 'js/remove_img_fields.js' %}"></script>
+</div>
+
+{% endblock %}

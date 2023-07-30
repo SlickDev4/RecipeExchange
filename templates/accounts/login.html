@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %} 
+{% load static %}
+{% block content %}
+
+<div class="login-box">
+  <h1>Login</h1>
+
+    <form method="post" action="{% url 'login-user' %}">
+      {% csrf_token %}
+
+      <input type="hidden" value="{{ next }}" name="next" />
+      <div hidden>
+        {% if form.non_field_errors %}
+        <ul class="errorlist">
+        {% for error in form.non_field_errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% for field in form %}
+      <div class="input-{{ forloop.counter }}">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }} {% if field.errors %}
+        <ul class="errorlist">
+          {% for error in field.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endfor %}
+
+      <div class="login-btn-box">
+        <button type="submit">Login</button>
+        <p>Don't have an account yet? <a href="{% url 'register-user' %}">Register here!</a></p>
+      </div>
+
+</div>
+<script src="{% static 'js/move_labels.js' %}"></script>
+{% endblock %}
