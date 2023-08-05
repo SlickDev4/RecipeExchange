@@ -18,26 +18,8 @@
           <p><span>Uploaded by:</span> {{ recipe.author.email }}</p>
           <p><span>Uploaded on:</span> {{ recipe.created_at }}</p>
           <div class="buttons">
-            <div class="form">
-              <form action="{% url 'recipe-like' recipe.pk %}" method="post">
-                {% csrf_token %}
-                <button type="submit">
-                  <ion-icon name="thumbs-up"></ion-icon>
-                </button>
-              </form>
-            </div>
-            <div class="other-buttons">
-              <span>{{ recipe.likes_count }}</span>
-              <a class="not-icon-a" href="#">Details</a>
-              {% if request.user == recipe.author %}
-              <a class="not-icon-a" href="{% url 'recipe-edit' recipe.pk %}"
-                >Edit</a
-              >
-              <a class="not-icon-a" href="{% url 'recipe-delete' recipe.pk %}"
-                >Delete</a
-              >
-              {% endif %}
-            </div>
+            <a class="not-icon-a" href="{% url 'recipe-details' recipe.pk %}"
+              >Details</a>
           </div>
         </div>
       </div>

@@ -40,7 +40,7 @@ class Category(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=50)
-    photo = models.ImageField(upload_to='media/', null=False, blank=False)
+    photo = models.ImageField(upload_to='', null=False, blank=False)
     author = models.ForeignKey(UserModel, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     ingredients = models.TextField()

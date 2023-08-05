@@ -139,7 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 # Redirect to this URL **after successful LOGOUT**
-LOGOUT_REDIRECT_URL = reverse_lazy('landing-page')
+LOGOUT_REDIRECT_URL = reverse_lazy('home')
 
 # Redirect to this URL when the user **needs to be logged in**
 LOGIN_URL = reverse_lazy('login-user')
@@ -150,4 +150,4 @@ AUTH_USER_MODEL = 'accounts.AppUser'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Define the URL prefix for media files
-MEDIA_URL = '/media/'
+MEDIA_URL = ''
