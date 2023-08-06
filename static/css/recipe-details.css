@@ -1,0 +1,101 @@
+.recipes-container .recipes-box .details-box {
+    display: flex;
+}
+
+.recipes-container .recipes-box .details-box .recipe-img {
+    width: 40%;
+    height: 40%;
+    margin: 3%;
+}
+
+.recipes-container .recipes-box .details-box .recipe-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.recipes-container .recipes-box .details-box .recipe-name {
+    padding-top: 2%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.recipes-container .recipes-box .details-box .recipe-name p {
+    word-break: break-word;
+    margin-top: 1%;
+}
+
+.recipes-container .recipes-box .details-box .recipe-name span {
+    color: rgb(1, 183, 255);
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.recipes-container .recipes-box .buttons-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 3%;
+    position: sticky;
+    bottom: 0;
+    background-color: black;
+    
+}
+
+.recipes-container .recipes-box .buttons-box .for-author,
+.recipes-container .recipes-box .buttons-box .for-users {
+    display: flex;
+    gap: 12%;
+    width: 50%;
+    padding-right: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipes-container .recipes-box .buttons-box ion-icon,
+.recipes-container .recipes-box .buttons-box .for-users form ion-icon {
+    transform: scale(1.8);
+}
+
+.recipes-container .recipes-box .buttons-box p,
+.recipes-container .recipes-box .buttons-box .for-users form {
+    display: flex;
+    font-size: 1.2em;
+}
+
+.recipes-container .recipes-box .buttons-box p span,
+.recipes-container .recipes-box .buttons-box .for-users form span {
+    margin-right: 10px;
+    text-decoration: none;
+
+}
+
+.recipes-container .recipes-box .buttons-box a,
+.recipes-container .recipes-box .buttons-box .for-users form a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.recipes-container .recipes-box .buttons-box .for-users form {
+    display: flex;
+    gap: 10px;
+}
+
+.recipes-container .recipes-box .buttons-box .for-users button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.recipes-container .recipes-box .buttons-box .for-users .likes-count {
+    margin-left: 10%;
+}
+
+.recipes-container .recipes-box .buttons-box .for-users .like-icon {
+    transform: scale(1.9);
+    padding-bottom: 2%;
+}

@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import generic as views
@@ -101,4 +102,14 @@ class RecipeDetailsView(views.DetailView):
     template_name = "main/recipe-details.html"
     model = Recipe
     fields = '__all__'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        recipe_id = self.kwargs['pk']
+        recipe = get_object_or_404(Recipe, id=recipe_id)
+        if self.request.user.is_authenticated:
+            liked = Like.objects.filter(user=self.request.user, recipe=recipe).exists()
+            context['liked'] = liked
+            context['author_or_user'] = 'True' if self.request.user == recipe.author else 'False'
+        return context
 

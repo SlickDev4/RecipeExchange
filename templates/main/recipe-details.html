@@ -1,43 +1,63 @@
-{% extends 'base/base.html' %} {% block content %}
+{% extends 'base/base.html' %}
+{% load static %}
 
+{% block content %}
 <div class="recipes-container">
     <div class="recipes-box">
       <h2 class="main-title">Recipe Details</h2>
-      <ul>
-        <div class="recipe">
-          <div class="title-img">
-            <img src="{{ recipe.photo.url }}" alt="recipe-img" />
-          </div>
-          <div class="description">
-            <h2>{{ recipe.title }}</h2>
-            <p><span>Category:</span> {{ recipe.category.name}}</p>
-            <p><span>Ingredients:</span> {{ recipe.ingredients }}</p>
-            <p><span>Uploaded by:</span> {{ recipe.author.email }}</p>
-            <p><span>Uploaded on:</span> {{ recipe.created_at }}</p>
-            <div class="buttons">
-              <div class="form">
-                <form action="{% url 'recipe-like' recipe.pk %}" method="post">
-                  {% csrf_token %}
-                  <button type="submit">
-                    <ion-icon name="thumbs-up"></ion-icon>
-                  </button>
-                </form>
-              </div>
-              <div class="other-buttons">
-                <span>{{ recipe.likes_count }}</span>
-                {% if request.user == recipe.author %}
-                <a class="not-icon-a" href="{% url 'recipe-edit' recipe.pk %}"
-                  >Edit</a>
-                <a class="not-icon-a" href="{% url 'recipe-delete' recipe.pk %}"
-                  >Delete</a>
-                {% endif %}
-              </div>
-            </div>
-          </div>
+      <div class="details-box">
+        <div class="recipe-img">
+          <img src="{{ recipe.photo.url }}" alt="{{ recipe.name }}-img" />
         </div>
-      </ul>
+        <div class="recipe-name">
+          <h2>{{ recipe.title }}</h2>
+          <p><span>Category:</span> {{ recipe.category.name}}</p>
+          <p><span>Ingredients:</span> {{ recipe.ingredients }}</p>
+          <p><span>Instructions:</span> {{ recipe.instructions }}</p>
+        </div>
+      </div>
+      <div class="buttons-box">
+        <div class="for-author">
+          {% if request.user == recipe.author %}
+          <p>
+            <span class="js-span">Edit</span>
+            <a class="js-button" href="{% url 'recipe-edit' recipe.pk %}">
+              <ion-icon name="create-sharp"></ion-icon>
+            </a>
+          </p>
+          <p>
+            <span class="js-span">Delete</span>
+            <a class="js-button" href="{% url 'recipe-delete' recipe.pk %}">
+              <ion-icon name="trash-sharp"></ion-icon>
+              </a>
+          </p>
+        {% endif %}
+        </div>
+        <div class="for-users">
+          {% if request.user.is_authenticated %}
+          <p>
+            <form action="{% url 'recipe-like' recipe.pk %}" method="post">
+              {% csrf_token %}
+              <span class="js-span">Like</span>
+              <a href="{% url 'recipe-like' recipe.pk %}">
+              <button class="js-button" type="submit"><ion-icon class="like-icon" name="thumbs-up-sharp"></ion-icon></button>
+              </a>
+              <span class="likes-count">{{ recipe.likes_count }}</span>
+            </form>
+          </p>
+          <p>
+            <span class="js-span">Comments</span>
+            <a class="js-button" href="#">
+              <ion-icon name="chatbox-ellipses"></ion-icon>
+              </a>
+          </p>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
+<div id="js-liked" hidden>{{ liked }}</div>
+<div id="js-author" hidden>{{ author_or_user }}</div>
+<script src="{% static 'js/recipe_details_btns.js' %}"></script>
 {% endblock %}
