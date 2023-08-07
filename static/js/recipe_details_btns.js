@@ -62,7 +62,7 @@ function check_liked () {
 }
 
 function check_hovers(i, element) {
-    if (i === 2) {
+    if (i === index) {
         if (liked.textContent === "False") {
             element.style.color = 'whitesmoke';
         } else {

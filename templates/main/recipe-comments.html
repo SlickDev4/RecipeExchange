@@ -18,9 +18,9 @@
           <div class="comment">{{ comment.text }}</div>
           <div class="author">
             {{ comment.author.profile.full_name }}
-            {% if request.user == comment.author %}
           <div class="posted-on">
             {{ comment.created_at }}
+            {% if request.user == comment.author %}
             <div class="comment-btns">
               <a href="{% url 'edit-comment' comment.pk %}">Edit <ion-icon name="create-sharp"></a>
               <a href="{% url 'delete-comment' comment.pk %}">Delete <ion-icon name="trash-sharp"></ion-icon></a>

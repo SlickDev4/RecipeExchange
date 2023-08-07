@@ -15,7 +15,7 @@
           <h2>{{ recipe.title }}</h2>
           <p><span>Category:</span> {{ recipe.category.name}}</p>
           <p><span>Ingredients:</span> {{ recipe.ingredients }}</p>
-          <p><span>Uploaded by:</span> {{ recipe.author.email }}</p>
+          <p><span>Uploaded by:</span> {{ recipe.author.profile.full_name }} / {{ recipe.author.email }}</p>
           <p><span>Uploaded on:</span> {{ recipe.created_at }}</p>
           <div class="buttons">
             <a class="not-icon-a" href="{% url 'recipe-details' recipe.pk %}"

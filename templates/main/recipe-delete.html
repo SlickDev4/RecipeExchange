@@ -8,15 +8,23 @@
     method="post"
     enctype="multipart/form-data"
   >
-    <div><span>{{ form.title.label }}</span> {{ form.title }}</div>
-    <div class="test"><span>{{ form.photo.label }}</span> {{ form.photo }}</div>
-    <div><span>{{ form.category.label }}</span> {{ form.category }}</div>
-    <div><span>{{ form.ingredients.label }}</span> {{ form.ingredients }}</div>
-    <div>
+    <div class="rmv-bck">
+      <span>{{ form.title.label }}</span> {{ form.title }}
+    </div>
+    <div class="test rmv-bck">
+      <span>{{ form.photo.label }}</span> {{ form.photo }}
+    </div>
+    <div class="rmv-bck">
+      <span>{{ form.category.label }}</span> {{ form.category }}
+    </div>
+    <div class="rmv-bck">
+      <span>{{ form.ingredients.label }}</span> {{ form.ingredients }}
+    </div>
+    <div class="rmv-bck">
       <span>{{ form.instructions.label }}</span> {{ form.instructions }}
     </div>
     {% csrf_token %}
-    <div><button type="submit">Delete Recipe</button></div>
+    <div><button class="add-recipe-btn" type="submit">Delete Recipe</button></div>
   </form>
   <script src="{% static 'js/remove_img_fields.js' %}"></script>
 </div>
