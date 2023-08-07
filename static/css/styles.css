@@ -6,3 +6,6 @@
 @import "home.css";
 @import "recipe-create.css";
 @import "recipe-details.css";
+@import "recipe-comments.css";
+@import "delete-comment.css";
+@import "edit-comment.css";

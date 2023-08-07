@@ -14,27 +14,28 @@
     0 0 120px rgba(255, 255, 255, 0.5);
 }
 
-.recipe-create-box div {
+.recipe-create-box .rmv-bck {
     display: flex;
     justify-content: space-between;
     margin-bottom: 6%;
     align-items: center;
     width: 100%;
     gap: 3%;
+    margin-top: 2%;
 }
 
-.recipe-create-box div textarea {
+.recipe-create-box .rmv-bck textarea {
     height: 4em;
     width: 100%;
     resize: vertical;
     max-height: 6em;
 }
 
-.recipe-create-box div select, .recipe-create-box div input {
+.recipe-create-box .rmv-bck select, .recipe-create-box .rmv-bck input {
     width: 100%;
 }
 
-.recipe-create-box div span {
+.recipe-create-box .rmv-bck span {
     width: 40%;
 }
 
@@ -43,7 +44,7 @@
     color: white;
 }
 
-.recipe-create-box div input, .recipe-create-box div textarea, .recipe-create-box div select {
+.recipe-create-box .rmv-bck input, .recipe-create-box .rmv-bck textarea, .recipe-create-box .rmv-bck select {
     background-color: transparent;
     color: whitesmoke;
     border: none;
@@ -51,14 +52,15 @@
     border-bottom: 2px solid whitesmoke;
 }
 
-.recipe-create-box div select option {
+.recipe-create-box .rmv-bck select option {
     background-color: black;
 }
 
-.recipe-create-box button {
+.recipe-create-box .add-recipe-btn {
     width: 50%;
     margin-left: 30%;
     margin-top: 5%;
+    margin-bottom: 2%;
     min-height: 5vh;
     font-size: 1em;
     font-weight: 600;
@@ -66,6 +68,8 @@
     transition: 0.5s ease;
 }
 
-.recipe-create-box button:hover {
+.recipe-create-box .add-recipe-btn:hover,
+.recipe-create-box .form-div .delete-comment-btn:hover,
+.recipe-create-box .form-div .cancel-delete-comment-btn:hover {
     background-color: rgb(1, 183, 255);
 }

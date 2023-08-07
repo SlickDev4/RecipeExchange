@@ -1,5 +1,5 @@
 from django import forms
-from .models import Recipe, Category
+from .models import Recipe, Category, Comment
 
 
 class RecipeCreateForm(forms.ModelForm):
@@ -8,3 +8,13 @@ class RecipeCreateForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'photo', 'category', 'ingredients', 'instructions']
+
+
+class CommentCreateForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['text'].widget.attrs['placeholder'] = "Write your comment here..."

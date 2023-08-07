@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %} {% block content %}
+
+<div class="recipe-create-box">
+  <div class="wrapper">
+    <div class="form-div-2">
+      <form action="{% url 'edit-comment' comment.pk %}" method="post">
+        <p>Edit your comment</p>
+        <p>
+          {{ form.text }}
+          <button type="submit">
+            <ion-icon name="arrow-redo-sharp"></ion-icon>
+          </button>
+        </p>
+        {% csrf_token %}
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

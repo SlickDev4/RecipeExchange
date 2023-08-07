@@ -28,7 +28,9 @@ class Profile(models.Model):
         return f"{self.user}"
 
     def full_name(self):
-        return f"{self.first_name} {self.last_name}"
+        if self.first_name and self.last_name:
+            return f"{self.first_name} {self.last_name}"
+        return self.user.email
 
 
 class Category(models.Model):

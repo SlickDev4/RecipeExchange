@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %} {% block content %}
+
+<div class="recipe-create-box">
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-div">
+      <p>Are you sure you want to delete your comment?</p>
+      <button class="delete-comment-btn" type="submit">Yes</button>
+      <a
+        class="cancel-delete-comment-btn"
+        href="{% url 'recipe-comments' recipe_id %}"
+        >No</a
+      >
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+<div class="recipes-container">
+  <div class="recipes-box">
+    <h2 class="main-title">Recipe Comments</h2>
+    <div class="details-box">
+      <div class="recipe-img">
+        <img src="{{ recipe.photo.url }}" alt="{{ recipe.name }}-img" />
+      </div>
+      <div class="comments-parent">
+        <div class="add-comment">
+          <form action="{% url 'recipe-comments' recipe.pk %}" method="post">
+            <p>{{ form.text }} <button type="submit"><ion-icon name="arrow-redo-sharp"></ion-icon></button></p>
+            {% csrf_token %}
+          </form>
+        </div>
+        {% for comment in filtered_comments %}
+        <div class="comments">
+          <div class="comment">{{ comment.text }}</div>
+          <div class="author">
+            {{ comment.author.profile.full_name }}
+            {% if request.user == comment.author %}
+          <div class="posted-on">
+            {{ comment.created_at }}
+            <div class="comment-btns">
+              <a href="{% url 'edit-comment' comment.pk %}">Edit <ion-icon name="create-sharp"></a>
+              <a href="{% url 'delete-comment' comment.pk %}">Delete <ion-icon name="trash-sharp"></ion-icon></a>
+            </div>
+            {% endif %}
+        </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="buttons-box">
+      <p id="comment-p">
+        <span class="js-span">Details</span>
+        <a
+          class="js-button"
+          id="comments-btn"
+          href="{% url 'recipe-details' recipe.pk %}"
+        >
+          <ion-icon name="information-circle-sharp"></ion-icon>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+<div id="comment_id" hidden>{{ comment_id }}</div>
+<script src="{% static 'js/recipe_comment_btn.js' %}"></script>
+{% endblock %}

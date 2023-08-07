@@ -39,7 +39,7 @@
             <form action="{% url 'recipe-like' recipe.pk %}" method="post">
               {% csrf_token %}
               <span class="js-span">Like</span>
-              <a href="{% url 'recipe-like' recipe.pk %}">
+              <a href="#">
               <button class="js-button" type="submit"><ion-icon class="like-icon" name="thumbs-up-sharp"></ion-icon></button>
               </a>
               <span class="likes-count">{{ recipe.likes_count }}</span>
@@ -47,7 +47,7 @@
           </p>
           <p>
             <span class="js-span">Comments</span>
-            <a class="js-button" href="#">
+            <a class="js-button" id="comments-btn" href="{% url 'recipe-comments' recipe.pk %}">
               <ion-icon name="chatbox-ellipses"></ion-icon>
               </a>
           </p>

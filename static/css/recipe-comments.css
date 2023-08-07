@@ -1,0 +1,91 @@
+.recipes-container .recipes-box .details-box .comments-parent {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 1.5%;
+}
+
+.recipes-container .recipes-box .details-box .comments-parent .comments {
+    width: 100%;
+    margin: 3%;
+    border-bottom: 2px solid bisque;
+    border-top: 2px solid bisque;
+    padding: 2%;
+}
+
+.recipes-container .recipes-box .details-box .comments-parent .comments .comment {
+    margin-bottom: 5%;
+    overflow-wrap: break-word;
+    font-weight: 600;
+}
+
+.recipes-container .recipes-box .details-box .comments-parent .comments .author,
+.recipes-container .recipes-box .details-box .comments-parent .comments .posted-on {
+    color: rgb(1, 183, 255);
+    font-weight: 600;
+}
+
+.recipes-container .recipes-box #comment-p {
+    margin-left: 45%;
+}
+
+.recipes-container .recipes-box .comments-parent .add-comment {
+    margin-bottom: 2%;
+    margin-right: 3%;
+}
+
+.recipes-container .recipes-box .add-comment form p,
+.recipe-create-box .wrapper form p {
+    display: flex;
+    margin-left: 8%;
+}
+
+.recipes-container .recipes-box .add-comment form button,
+.recipe-create-box .wrapper form button {
+    height: 3em;
+    cursor: pointer;
+    color: whitesmoke;
+    margin-left: 1%;
+    width: 10%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.recipes-container .recipes-box .add-comment form button:hover,
+.recipe-create-box .wrapper form button:hover {
+    background-color: rgb(1, 183, 255);
+    color: black;
+    transition: 0.5s ease;
+}
+
+.recipes-container .recipes-box .add-comment form button ion-icon,
+.recipe-create-box .wrapper form button ion-icon {
+    transform: scale(2);
+}
+
+.recipes-container .recipes-box .add-comment form p textarea,
+.recipe-create-box .wrapper form p textarea {
+    height: 3em;
+    max-height: 3em;
+    min-height: 3em;
+    resize: none;
+    width: 100%;
+}
+
+.recipes-container .recipes-box .details-box .comments-parent .comments .posted-on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipes-container .recipes-box .details-box .comments-parent .comments .author a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.recipes-container .recipes-box .details-box .comments-parent .comments .author a:hover {
+    transition: 0.5s ease;
+    color: rgb(1, 183, 255);
+}
