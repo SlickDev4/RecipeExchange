@@ -1,5 +1,5 @@
 window.onload = function() {
-    const div = document.getElementsByClassName("test")[0];
+    const div = document.getElementsByClassName("rmv-img")[0];
 
     const title = div.firstChild;
     const input = div.lastChild;

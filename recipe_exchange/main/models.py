@@ -6,6 +6,12 @@ UserModel = get_user_model()
 
 
 class Profile(models.Model):
+    GENDER_CHOICES = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+        ("unknown", "I don't want to share"),
+    )
+
     first_name = models.CharField(
         max_length=30,
         null=True,
@@ -14,6 +20,29 @@ class Profile(models.Model):
 
     last_name = models.CharField(
         max_length=30,
+        null=True,
+        blank=True,
+    )
+
+    age = models.IntegerField(
+        null=True,
+        blank=True,
+    )
+
+    gender = models.CharField(
+        max_length=30,
+        choices=GENDER_CHOICES,
+        null=True,
+        blank=True,
+    )
+
+    birth_date = models.DateField(
+        null=True,
+        blank=True,
+    )
+
+    photo = models.ImageField(
+        upload_to='',
         null=True,
         blank=True,
     )
@@ -31,6 +60,11 @@ class Profile(models.Model):
         if self.first_name and self.last_name:
             return f"{self.first_name} {self.last_name}"
         return self.user.email
+
+    def delete(self, *args, **kwargs):
+        app_user = self.user
+        super(Profile, self).delete(*args, **kwargs)
+        app_user.delete()
 
 
 class Category(models.Model):

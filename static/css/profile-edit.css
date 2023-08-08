@@ -1,0 +1,43 @@
+.profile-container .profile-box .profile-details-box .form-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-container .profile-box .profile-details-box .photo-edit,
+.profile-container .profile-box .profile-details-box .first-name-edit,
+.profile-container .profile-box .profile-details-box .last-name-edit,
+.profile-container .profile-box .profile-details-box .age-edit,
+.profile-container .profile-box .profile-details-box .gender-edit,
+.profile-container .profile-box .profile-details-box .birth-date-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-container .profile-box .profile-details-box .photo-edit .data,
+.profile-container .profile-box .profile-details-box .first-name-edit .data,
+.profile-container .profile-box .profile-details-box .last-name-edit .data,
+.profile-container .profile-box .profile-details-box .age-edit .data,
+.profile-container .profile-box .profile-details-box .gender-edit .data,
+.profile-container .profile-box .profile-details-box .birth-date-edit .data {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-container .profile-box .profile-details-box .photo-edit .data input {
+    width: 60%;
+}
+
+.profile-container .profile-box .profile-details-box .photo-edit .label,
+.profile-container .profile-box .profile-details-box .first-name-edit .label,
+.profile-container .profile-box .profile-details-box .last-name-edit .label,
+.profile-container .profile-box .profile-details-box .age-edit .label,
+.profile-container .profile-box .profile-details-box .gender-edit .label,
+.profile-container .profile-box .profile-details-box .birth-date-edit .label {
+    font-weight: 600;
+    color: rgb(1, 183, 255);
+}

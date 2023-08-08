@@ -1,0 +1,131 @@
+.profile-container .profile-box {
+    display: flex;
+}
+
+.profile-container .profile-box .profile-details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2% 15%;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.profile-container .profile-box .profile-other-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding-top: 12%;
+}
+
+.profile-container .profile-box .profile-other-box a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: bisque;
+    transition: 0.5s ease;
+    width: 40%;
+    text-align: center;
+    color: black;
+    border-radius: 6px;
+    font-size: 1.2em;
+}
+
+.profile-container .profile-box .profile-other-box a:hover {
+    background-color: rgb(1, 183, 255);
+    width: 60%;
+}
+
+.profile-container .profile-box .profile-other-box a:last-child {
+    width: 18vh;
+    position: absolute;
+    bottom: 3%;
+    background-color: rgb(1, 183, 255);
+    color: black;
+}
+
+.profile-container .profile-box .profile-other-box a:last-child:hover {
+    background-color: rgb(221, 17, 17);
+    color: whitesmoke;
+    width: 26vh;
+}
+
+.profile-container .profile-box .profile-other-box a:nth-child(3) {
+    margin-top: 5%;
+}
+
+.profile-container .profile-box .profile-details-box .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container .profile-box .profile-details-box .photo img {
+    border-radius: 120px;
+    width: 130px;
+    height: 130px;
+}
+
+.profile-container .profile-box .profile-details-box .first-name,
+.profile-container .profile-box .profile-details-box .last-name,
+.profile-container .profile-box .profile-details-box .age,
+.profile-container .profile-box .profile-details-box .gender,
+.profile-container .profile-box .profile-details-box .birth-date {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container .profile-box .profile-details-box .photo .label,
+.profile-container .profile-box .profile-details-box .first-name .label,
+.profile-container .profile-box .profile-details-box .last-name .label,
+.profile-container .profile-box .profile-details-box .age .label,
+.profile-container .profile-box .profile-details-box .gender .label,
+.profile-container .profile-box .profile-details-box .birth-date .label {
+    font-weight: 600;
+    color: rgb(1, 183, 255);
+}
+
+.profile-container .profile-box .profile-details-box .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 65%;
+    margin-top: 2%;
+}
+
+.profile-container .profile-box .profile-details-box .buttons a,
+.profile-container .profile-box .profile-details-box .buttons button {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: bisque;
+    transition: 0.5s ease;
+    width: 60%;
+    text-align: center;
+    color: black;
+    border-radius: 6px;
+}
+
+.profile-container .profile-box .profile-details-box .buttons button {
+    height: 4vh;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.profile-container .profile-box .profile-details-box .buttons a:hover,
+.profile-container .profile-box .profile-details-box .buttons button:hover {
+    background-color: rgb(1, 183, 255);
+    width: 100%;
+}
+

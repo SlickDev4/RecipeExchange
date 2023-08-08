@@ -5,9 +5,15 @@ from django.views import generic as views
 class OnlyAuthorAccessMixin(views.View):
     def get_object(self, *args, **kwargs):
         obj = super().get_object(*args, **kwargs)
-        if obj.author != self.request.user:
-            raise PermissionDenied
-        return obj
+
+        try:
+            if obj.author != self.request.user:
+                raise PermissionDenied
+            return obj
+        except:
+            if obj.user != self.request.user:
+                raise PermissionDenied
+            return obj
 
 
 class PopulateEditDeleteFormMixin(views.base.ContextMixin, views.View):

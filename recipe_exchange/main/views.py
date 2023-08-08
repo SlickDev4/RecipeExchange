@@ -1,10 +1,10 @@
-from django.db.models import Max
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import mixins as auth_mixins
 from .models import Profile, Recipe, Like, Comment
-from .forms import RecipeCreateForm, CommentCreateForm
+from .forms import RecipeCreateForm, CommentCreateForm, ProfileUpdateForm
 from .mixins import PopulateEditDeleteFormMixin, OnlyAuthorAccessMixin
 
 # main/views
@@ -19,9 +19,8 @@ class HomePage(
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        if self.request.user.is_authenticated:
-            profile = Profile.objects.get(user=self.request.user)
-            context['profile'] = profile
+
+        context['main_title'] = "All Recipes"
 
         for recipe in context['recipes']:
             recipe.likes_count = Like.objects.filter(recipe=recipe).count()
@@ -85,7 +84,7 @@ class RecipeLikeView(
 ):
     template_name = "main/recipe-details.html"
     model = Like
-    fields = []
+    fields = '__all__'
 
     def form_valid(self, form, *args, **kwargs):
         recipe_id = self.kwargs['pk']
@@ -96,7 +95,12 @@ class RecipeLikeView(
         like.user = self.request.user
         like.save()
 
-        return self.custom_redirect(recipe_id)
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['recipe'] = get_object_or_404(Recipe, id=self.kwargs['pk'])
+        return context
 
     def post(self, request, *args, **kwargs):
         recipe_id = self.kwargs['pk']
@@ -109,11 +113,10 @@ class RecipeLikeView(
         else:
             Like.objects.create(user=request.user, recipe=recipe)
 
-        return self.custom_redirect(recipe_id)
+        return HttpResponseRedirect(self.get_success_url())
 
-    def custom_redirect(self, recipe_id):
-        recipe_details_url = reverse_lazy('recipe-details', args=[recipe_id])
-        return redirect(recipe_details_url)
+    def get_success_url(self):
+        return reverse_lazy('recipe-details', kwargs={'pk': self.kwargs['pk']})
 
 
 class RecipeDetailsView(
@@ -132,6 +135,50 @@ class RecipeDetailsView(
             liked = Like.objects.filter(user=self.request.user, recipe=recipe).exists()
             context['liked'] = liked
             context['author_or_user'] = 'True' if self.request.user == recipe.author else 'False'
+
+        return context
+
+
+class MyRecipesView(
+    auth_mixins.LoginRequiredMixin,
+    views.ListView,
+):
+    template_name = 'main/home.html'
+    model = Recipe
+    context_object_name = 'recipes'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['recipes'] = Recipe.objects.filter(author=self.request.user)
+        context['main_title'] = "My Recipes"
+
+        for recipe in context['recipes']:
+            recipe.likes_count = Like.objects.filter(recipe=recipe).count()
+
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.order_by('-updated_at')
+
+
+class LikedRecipesView(
+    auth_mixins.LoginRequiredMixin,
+    views.ListView,
+):
+    template_name = 'main/home.html'
+    model = Recipe
+    context_object_name = 'recipes'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['recipes'] = Recipe.objects.filter(like__user=self.request.user)
+        context['main_title'] = "Liked Recipes"
+
+        for recipe in context['recipes']:
+            recipe.likes_count = Like.objects.filter(recipe=recipe).count()
 
         return context
 
@@ -208,3 +255,35 @@ class EditCommentView(
     def get_success_url(self):
         recipe_pk = self.get_object().recipe.pk
         return reverse_lazy('recipe-comments', args=[recipe_pk])
+
+
+class ProfileDetailsView(
+    auth_mixins.LoginRequiredMixin,
+    OnlyAuthorAccessMixin,
+    views.DetailView
+):
+    template_name = "main/profile-details.html"
+    model = Profile
+
+
+class ProfileEditView(
+    auth_mixins.LoginRequiredMixin,
+    OnlyAuthorAccessMixin,
+    views.UpdateView
+):
+    template_name = "main/profile-edit.html"
+    model = Profile
+    form_class = ProfileUpdateForm
+
+    def get_success_url(self):
+        return reverse_lazy('profile-details', args=[self.kwargs['pk']])
+
+
+class ProfileDeleteView(
+    auth_mixins.LoginRequiredMixin,
+    OnlyAuthorAccessMixin,
+    views.DeleteView
+):
+    template_name = 'main/profile-delete.html'
+    model = Profile
+    success_url = reverse_lazy('home')

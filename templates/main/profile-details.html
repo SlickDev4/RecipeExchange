@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+
+<div class="profile-container">
+  <div class="profile-box">
+    <div class="profile-details-box">
+      <div class="photo">
+        {% if profile.photo %}
+        <img src="{{ profile.photo.url }}" alt="img" />
+        {% else %}
+        <img src="{% static 'images/user-profile.png' %}" alt="img" />
+        {% endif %}
+      </div>
+      <div class="first-name">
+        <div class="label">First Name:</div>
+        <div class="data">{{ profile.first_name }}</div>
+      </div>
+      <div class="last-name">
+        <div class="label">Last Name:</div>
+        <div class="data">{{ profile.last_name }}</div>
+      </div>
+      <div class="age">
+        <div class="label">Age:</div>
+        <div class="data">{{ profile.age }}</div>
+      </div>
+      <div class="gender">
+        <div class="label">Gender:</div>
+        <div class="data">{{ profile.gender }}</div>
+      </div>
+      <div class="birth-date">
+        <div class="label">Birth Date:</div>
+        <div class="data">{{ profile.birth_date }}</div>
+      </div>
+      <div class="buttons">
+        <a href="{% url 'profile-edit' profile.pk %}">Edit</a>
+        <a href="{% url 'profile-delete' profile.pk %}">Delete</a>
+      </div>
+    </div>
+    <div class="profile-other-box">
+      <a href="{% url 'my-recipes' %}">My recipes</a>
+      <a href="{% url 'liked-recipes' %}">Liked recipes</a>
+      <a href="{% url 'recipe-create' %}">Add Recipe</a>
+      <a href="{% url 'logout-user' %}">Logout</a>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+{% endblock %}

@@ -2,7 +2,7 @@ h1 {
     color: whitesmoke;
 }
 
-.recipes-container .main-title {
+.main-title {
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
@@ -11,13 +11,14 @@ h1 {
     font-size: 2em;
 }
 
-.recipes-container {
+.recipes-container, .profile-container {
     color: whitesmoke;
     display: flex;
     flex-direction: column;
 }
 
-.recipes-container .recipes-box {
+.recipes-container .recipes-box,
+.profile-container .profile-box {
     overflow: auto;
     max-height: 70vh;
     scroll-behavior: smooth;
@@ -29,7 +30,8 @@ h1 {
     margin-top: 3%;
 }
 
-.recipes-container .recipes-box::-webkit-scrollbar {
+.recipes-container .recipes-box::-webkit-scrollbar,
+.profile-container .profile-box::-webkit-scrollbar {
     display: none;
 }
 
@@ -133,7 +135,8 @@ h1 {
     color: rgb(1, 183, 255);
 }
 
-.recipes-box {
+.recipes-box,
+.profile-box {
     background-color: rgba(0,0,0, 0.5);
     backdrop-filter: blur(8px);
     color: whitesmoke;

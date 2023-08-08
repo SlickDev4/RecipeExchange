@@ -1,5 +1,8 @@
+from datetime import datetime as dt
 from django import forms
-from .models import Recipe, Category, Comment
+from django.forms import SelectDateWidget
+
+from .models import Recipe, Category, Comment, Profile
 
 
 class RecipeCreateForm(forms.ModelForm):
@@ -18,3 +21,12 @@ class CommentCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['text'].widget.attrs['placeholder'] = "Write your comment here..."
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    birth_date = forms.DateField(widget=SelectDateWidget(years=range(1900, dt.now().year + 1)))
+    gender = forms.ChoiceField(choices=Profile.GENDER_CHOICES, widget=forms.Select())
+
+    class Meta:
+        model = Profile
+        fields = ['first_name', 'last_name', 'age', 'gender', 'birth_date', 'photo']

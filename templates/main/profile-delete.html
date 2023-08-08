@@ -4,11 +4,11 @@
   <form method="post">
     {% csrf_token %}
     <div class="form-div">
-      <p>Are you sure you want to delete your recipe?</p>
+      <p>Are you sure you want to delete your profile?</p>
       <button class="delete-comment-btn" type="submit">Yes</button>
       <a
         class="cancel-delete-comment-btn"
-        href="{% url 'home' %}"
+        href="{% url 'profile-details' request.user.profile.pk %}"
         >No</a
       >
     </div>

@@ -18,9 +18,7 @@
             <li><a href="#">Contacts</a></li>
             <li><a href="#">About</a></li>
             {% if request.user.is_authenticated %}
-            <li><a href="{% url 'recipe-create' %}">Add Recipe</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="{% url 'logout-user' %}">Logout</a></li>
+            <li><a href="{% url 'profile-details' request.user.profile.pk %}">Profile</a></li>
             {% else %}
             <li><a href="{% url 'login-user' %}">Login</a></li>
             {% endif %}
