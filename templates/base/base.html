@@ -10,21 +10,7 @@
   </head>
   <body>
     <section>
-      <div class="header-box">
-        <h1>Good<span>Food</span></h1>
-        <nav>
-          <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">About</a></li>
-            {% if request.user.is_authenticated %}
-            <li><a href="{% url 'profile-details' request.user.profile.pk %}">Profile</a></li>
-            {% else %}
-            <li><a href="{% url 'login-user' %}">Login</a></li>
-            {% endif %}
-          </ul>
-        </nav>
-      </div>
+      {% include "base/header.html" %}
       {% block content %} {% endblock %}
     </section>
     <script

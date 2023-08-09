@@ -21,4 +21,7 @@ urlpatterns = (
     path('profile/details/<int:pk>/', views.ProfileDetailsView.as_view(), name='profile-details'),
     path('profile/edit/<int:pk>/', views.ProfileEditView.as_view(), name='profile-edit'),
     path('profile/delete/<int:pk>/', views.ProfileDeleteView.as_view(), name='profile-delete'),
+
+    path('contacts/', views.ContactsView.as_view(), name='contacts'),
+    path('about/', views.AboutView.as_view(), name='about'),
 )

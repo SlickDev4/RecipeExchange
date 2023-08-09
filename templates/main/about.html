@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+
+<div class="about-box">
+  <div class="image">
+    <img
+      src="{% static 'images/recipe-about.png' %}"
+      alt="recipe-exchange-img"
+    />
+  </div>
+  <div class="text">
+    <p>
+      We are a company that provides a place where you can exchange recipes with
+      other users. You can also like other's posts and save them for later use.
+    </p>
+    <p>
+      If you love to cook and experiment or you can't cook and need to start
+      from somewhere, this is your place.
+    </p>
+    <p>
+      You only need to <a href="{% url 'login-user' %}">Login</a> or
+      <a href="{% url 'register-user' %}">Register</a> to start using our website.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

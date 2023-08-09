@@ -5,6 +5,8 @@ h1 {
 .main-title {
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 2%;
+    margin-top: 2%;
     text-align: center;
     color: rgb(1, 183, 255);
     font-weight: 700;
@@ -136,7 +138,9 @@ h1 {
 }
 
 .recipes-box,
-.profile-box {
+.profile-box,
+.contacts-box,
+.about-box {
     background-color: rgba(0,0,0, 0.5);
     backdrop-filter: blur(8px);
     color: whitesmoke;

@@ -12,5 +12,18 @@
 
 .wrapper .form-div-2 p {
     margin-bottom: 10%;
-    margin-top: 5%
+    margin-top: 5%;
+    font-size: 1.2em;
+}
+
+.wrapper .form-div-2 form button {
+    height: 3em;
+    cursor: pointer;
+    color: whitesmoke;
+    margin-left: 1%;
+    width: 20%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }

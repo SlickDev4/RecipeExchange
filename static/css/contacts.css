@@ -1,0 +1,74 @@
+.contacts-box,
+.about-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    padding: 5%;
+}
+
+.contacts-box .first-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    gap: 5%;
+}
+
+.contacts-box ion-icon {
+    transform: scale(2);
+    color: rgb(255, 200, 0);
+    margin-bottom: 10%;
+}
+
+.contacts-box .first-line .chat, 
+.contacts-box .first-line .ticket,
+.contacts-box .first-line .phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    border: 2px solid whitesmoke;
+    border-radius: 6px;
+    padding: 5%;
+    padding-bottom: 2%;
+    flex: 1;
+}
+
+.contacts-box .first-line h3 {
+    color: rgb(1, 183, 255);
+    margin-bottom: 10%;
+}
+
+.contacts-box .first-line .chat p,
+.contacts-box .first-line .ticket p,
+.contacts-box .first-line .phone p {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.contacts-box .first-line .chat a,
+.contacts-box .first-line .ticket a,
+.contacts-box .first-line .phone a {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-bottom: 2%;
+    padding: 1% 2%;
+    border-radius: 6px;
+    background-color: bisque;
+    color: black;
+    width: 50%;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.5s ease;
+    margin-top: auto;
+}
+
+.contacts-box .first-line .chat a:hover,
+.contacts-box .first-line .ticket a:hover,
+.contacts-box .first-line .phone a:hover {
+    width: 70%;
+    background-color: rgb(1, 183, 255);
+}

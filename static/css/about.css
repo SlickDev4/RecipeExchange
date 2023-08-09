@@ -1,0 +1,30 @@
+.about-box {
+    flex-direction: row;
+    gap: 15%;
+}
+
+.about-box .image {
+    transform: scale(1.4);
+}
+
+.about-box .text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+.about-box .text p {
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+.about-box .text a {
+    text-decoration: underline;
+    color: rgb(255, 200, 0);
+    transition: 0.3s ease;
+}
+
+.about-box .text a:hover {
+    color: rgb(1, 183, 255);
+}
