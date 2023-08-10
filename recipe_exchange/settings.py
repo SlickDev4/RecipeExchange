@@ -149,5 +149,4 @@ AUTH_USER_MODEL = 'accounts.AppUser'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Define the URL prefix for media files
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
