@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import mixins as auth_mixins
@@ -295,3 +295,7 @@ class ContactsView(views.TemplateView):
 
 class AboutView(views.TemplateView):
     template_name = 'main/about.html'
+
+
+def admin_redirect(request):
+    return redirect('admin')

@@ -24,4 +24,6 @@ urlpatterns = (
 
     path('contacts/', views.ContactsView.as_view(), name='contacts'),
     path('about/', views.AboutView.as_view(), name='about'),
+
+    path('admin/', views.admin_redirect, name='admin-redirect'),
 )

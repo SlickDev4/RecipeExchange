@@ -2,6 +2,9 @@
   <h1>Good<span>Food</span></h1>
   <nav>
     <ul>
+      {% if request.user.is_staff %}
+      <li><a class="admin-link" href="{% url 'admin-redirect' %}">Admin</a></li>
+      {% endif %}
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'contacts' %}">Contacts</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
