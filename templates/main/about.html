@@ -16,10 +16,12 @@
       If you love to cook and experiment or you can't cook and need to start
       from somewhere, this is your place.
     </p>
+    {% if not request.user.is_authenticated %}
     <p>
       You only need to <a href="{% url 'login-user' %}">Login</a> or
       <a href="{% url 'register-user' %}">Register</a> to start using our website.
     </p>
+    {% endif %}
   </div>
 </div>
 
