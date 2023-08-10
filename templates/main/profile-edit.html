@@ -6,39 +6,41 @@
       <h2 class="main-title">Edit Profile</h2>
       <form action="" method="post" enctype="multipart/form-data">
         <div class="form-wrap">
-            {% csrf_token %}
-        <div class="photo-edit">
-          <div class="label">Photo:</div>
-          <div class="data">{{ form.photo }}</div>
-        </div>
-        <div class="first-name-edit">
-          <div class="label">First Name:</div>
-          <div class="data">{{ form.first_name }}</div>
-        </div>
-        <div class="last-name-edit">
-          <div class="label">Last Name:</div>
-          <div class="data">{{ form.last_name }}</div>
-        </div>
-        <div class="age-edit">
-          <div class="label">Age:</div>
-          <div class="data">{{ form.age }}</div>
-        </div>
-        <div class="gender-edit">
-          <div class="label">Gender:</div>
-          <div class="data">{{ form.gender }}</div>
-        </div>
-        <div class="birth-date-edit">
-          <div class="label">Birth Date:</div>
-          <div class="data">{{ form.birth_date }}</div>
-        </div>
-        <div class="buttons">
-          <button type="submit">Save</button>
-          <a href="{% url 'profile-details' request.user.profile.pk %}">Cancel</a>
-        </div>
+          {% csrf_token %}
+          <div class="photo-edit">
+            <div class="label">Photo:</div>
+            <div class="data">{{ form.photo }}</div>
+          </div>
+          <div class="first-name-edit">
+            <div class="label">First Name:</div>
+            <div class="data">{{ form.first_name }}</div>
+          </div>
+          <div class="last-name-edit">
+            <div class="label">Last Name:</div>
+            <div class="data">{{ form.last_name }}</div>
+          </div>
+          <div class="age-edit">
+            <div class="label">Age:</div>
+            <div class="data">{{ form.age }}</div>
+          </div>
+          <div class="gender-edit">
+            <div class="label">Gender:</div>
+            <div class="data">{{ form.gender }}</div>
+          </div>
+          <div class="birth-date-edit">
+            <div class="label">Birth Date:</div>
+            <div class="data">{{ form.birth_date }}</div>
+          </div>
+          <div class="buttons">
+            <button type="submit">Save</button>
+            <a href="{% url 'profile-details' request.user.profile.pk %}"
+              >Cancel</a
+            >
+          </div>
         </div>
       </form>
     </div>
   </div>
 </div>
-<script src="{% static 'js/remove_img_profile.js' %}"></script>
+<script src="{% static 'js/handleImageProfile.js' %}"></script>
 {% endblock %}

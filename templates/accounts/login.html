@@ -18,6 +18,7 @@
         </ul>
         {% endif %}
       </div>
+
       {% for field in form %}
       <div class="input-{{ forloop.counter }}">
         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
@@ -35,7 +36,6 @@
         <button type="submit">Login</button>
         <p>Don't have an account yet? <a href="{% url 'register-user' %}">Register here!</a></p>
       </div>
-
 </div>
-<script src="{% static 'js/move_labels.js' %}"></script>
+<script src="{% static 'js/loginLabels.js' %}"></script>
 {% endblock %}
