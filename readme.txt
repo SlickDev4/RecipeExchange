@@ -12,7 +12,19 @@ I only found how to create customer superuser command, which I don't think is wh
 1-2 normal users so that you can test the behaviour of all. After creating the superuser, you have
 to manually link it to the profile from the admin panel.
 
-4. Regarding the Security features:
+4. You have to create the categories manually as I was unable to populate them on db creation.
+   	Example list of categories:
+        1	Meat
+        2	Vegan
+        3	Breakfast
+        4	Bread
+        5	Soup
+        7	Vegetarian
+        8	Main Dishes
+        9	Desserts
+        10	Alaminute
+
+5. Regarding the Security features:
     a/ SQL Injection is automatically implemented if we are using the Django ORM.
     b/ To prevent XSS attacks, Django automatically escapes variables that are rendered in templates
        except we use the |safe filter, which I didn't.

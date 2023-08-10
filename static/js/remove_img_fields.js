@@ -8,5 +8,4 @@ window.onload = function() {
 
     div.appendChild(title);
     div.appendChild(input);
-    
 };

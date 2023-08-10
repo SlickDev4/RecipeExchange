@@ -47,4 +47,3 @@ setInterval(() => {labelPos(email_input, email_label, password_input, password_l
 setInterval(() => {checkErrorMessages(errorlist, email_input)}, 100);
 
 email_input.addEventListener("focus", function() {clearInput(email_input)})
-
