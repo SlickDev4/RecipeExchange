@@ -6,7 +6,7 @@ This is a file with some information regarding my project.
 
 2. When creating the superuser, it is not linked to the profile model as it is created via command.
 This is probably a mistake on my end as I didn't find how to create the superuser with the profile model.
-I only found how to create customer superuser command, which I don't think is what I need.
+I only found how to create custom superuser command, which I don't think is what I need.
 
 3. After setting up the database, you have to create a superuser, 1-2 staff users with the Staff Group and
 1-2 normal users so that you can test the behaviour of all. After creating the superuser, you have
