@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from django.urls import reverse_lazy
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,12 +81,12 @@ WSGI_APPLICATION = 'recipe_exchange.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "recipe_exchange_db",
-        "USER": "kukata0412",
-        "PASSWORD": "acer8802569",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "ENGINE": ,
+        "NAME": ,
+        "USER": ,
+        "PASSWORD": ,
+        "HOST": ,
+        "PORT": ,
     }
 }
 
