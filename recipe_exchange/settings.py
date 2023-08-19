@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'recipe_exchange.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": ,
-        "NAME": ,
-        "USER": ,
-        "PASSWORD": ,
-        "HOST": ,
-        "PORT": ,
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "db_name",
+        "USER": "user",
+        "PASSWORD": "password",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
